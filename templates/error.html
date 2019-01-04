@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error message
+{% endblock %}
+
+{% block main %}
+    <!-- Hero unit -->
+    <div class="hero">
+      <div class="hero__overlay hero__overlay--gradient"></div>
+      <div class="hero__mask"></div>
+      <div class="hero__inner">
+        <div class="container">
+          <div class="hero__content">
+            <div class="hero__content__inner" id='navConverter'>
+              <h1 class="hero__title">ERROR ERROR ERROR</h1>
+              <p class="hero__text">{{ error }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

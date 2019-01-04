@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search page
+{% endblock %}
+
+{% block main %}
+<!-- Hero unit -->
+<div class="hero">
+  <div class="hero__overlay hero__overlay--gradient"></div>
+  <div class="hero__mask"></div>
+  <div class="hero__inner">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__content__inner" id='navConverter'>
+          <h1 class="hero__title">Welcome to Benjie's books.</h1>
+          <p class="hero__text">Benjie's books is your one stop book search and review shop.</p>
+          <p class="hero__text">Read reviews by others or leave a review yourself.</p>
+            <!-- Search bar -->
+            <form action="/search" method="post" id="searching">
+                <label>Enter a title, author or ISBN to search for a book</label>
+                <div class="form-group">
+                    <input class="form-control" name="title" id="title" placeholder="Title">
+                    <input class="form-control" name="author" id="author" placeholder="Author">
+                    <input class="form-control" name="isbn" id="isbn" placeholder="ISBN">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-secondary">Search for book</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hero__sub">
+  <span id="scrollToNext" class="scroll">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class='hero__sub__down' fill="currentColor" width="512px" height="512px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path d="M256,298.3L256,298.3L256,298.3l174.2-167.2c4.3-4.2,11.4-4.1,15.8,0.2l30.6,29.9c4.4,4.3,4.5,11.3,0.2,15.5L264.1,380.9c-2.2,2.2-5.2,3.2-8.1,3c-3,0.1-5.9-0.9-8.1-3L35.2,176.7c-4.3-4.2-4.2-11.2,0.2-15.5L66,131.3c4.4-4.3,11.5-4.4,15.8-0.2L256,298.3z"/></svg>
+  </span>
+</div>
+
+<div class="container">
+<div class="results">
+  <table class="table table-sm">
+      <thead>
+          <tr class="row">
+              <th class="col">ISBN</th>
+              <th class="col">Title</th>
+              <th class="col">Author</th>
+              <th class="col hidecol">Year</th>
+              <th class="col">More information</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for book in books %}
+          <form action="/bookinfo" method="post" id="bookinfopage">
+          <tr class="row">
+              <td class="col">{{ book.isbn }}</td>
+              <td class="col">{{ book.title }}</td>
+              <td class="col">{{ book.author }}</td>
+              <td class="col hidecol">{{ book.year }}</td>
+              <td class="col"><button class="btn btn-secondary" id="submit" name="submit" value="{{ book.isbn }}" type="submit">Select</button></td>
+          </tr>
+          </form>
+          {% endfor %}
+      </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

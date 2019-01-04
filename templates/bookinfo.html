@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book Information
+{% endblock %}
+
+{% block main %}
+<!-- Hero unit -->
+<div class="hero">
+  <div class="hero__overlay hero__overlay--gradient"></div>
+  <div class="hero__mask"></div>
+  <div class="hero__inner">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__content__inner" id='navConverter'>
+          <h1 class="hero__title">Title: {{ book.title }}</h1>
+          <p class="hero__text">Author: {{ book.author }}</p>
+          <p class="hero__text">Year published: {{ book.year }}</p>
+          <p class="hero__text">ISBN: {{ book.isbn }}</p>
+          <p class="hero__text">Goodreads rating: {{ rating }}/5</p>
+          <p class="hero__text">Number of Goodreads ratings: {{ ratings }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Expanded sections -->
+<div class="expanded landing__section">
+  <div class="container">
+    <div class="expanded__inner">
+      <div class="expanded__media">
+        <img src="/static/images/undraw_grades_j6jn.svg" class="expanded__image">
+      </div>
+      <div class="expanded__content">
+        <h2 class="expanded__title">Comments and ratings</h2>
+        {% if reviews %}
+          {% for review in reviews %}
+            <div class="card">
+              <h5 class="card-header">{{ review.username }}</h5>
+              <div class="card-body">
+                <p class="card-text">{{ review.comment }}</p>
+                <p class="card-text">Rating: {{ review.rating }}/5</p>
+              </div>
+            </div>
+            <br>
+          {% endfor %}
+        {% else %}
+        <p class="expanded__text">There are no reviews of this book at present. Why not leave one to help others in their reading choices.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="expanded landing__section">
+  <div class="container">
+    <div class="expanded__inner">
+      <div class="expanded__media">
+        <img src="/static/images/undraw_Bibliophile_hwqc.svg" class="expanded__image">
+      </div>
+      <div class="expanded__content" id="box2">
+        <h2 class="expanded__title">Leave a comment</h2>
+          <form action="/review" method="post">
+            <div class="form-group" >
+              <label for="user_review">Please leave your review</label>
+              <p><textarea class="form-control review" id="user_review" name="review" rows="5"></textarea></p>
+            </div>
+            <div class="form-group">
+              <label for="user_rating">Please leave a rating out of 5</label>
+              <p><select class="form-control" id="user_rating" name="rating">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select></p>
+            </div>
+            <p><button class="btn btn-secondary" id="submit" name="submit" value="{{ book.isbn }}" type="submit">Submit</button></p>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

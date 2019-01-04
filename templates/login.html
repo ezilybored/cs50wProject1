@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login page
+{% endblock %}
+
+{% block main %}
+<!-- Hero unit -->
+<div class="hero">
+  <div class="hero__overlay hero__overlay--gradient"></div>
+  <div class="hero__mask"></div>
+  <div class="hero__inner">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__content__inner" id='navConverter'>
+          <h1 class="hero__title">Welcome to Benjie's books.</h1>
+          <p class="hero__text">Benjie's books is your one stop book search and review shop.</p>
+          <p class="hero__text">Read reviews by others or leave a review yourself.</p
+            <!-- Log in form -->
+            <form id="login" action="/login" method="post">
+                <div class="form-group">
+                    <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text"/>
+                </div>
+                <div class="form-group">
+                    <input autocomplete="off" class="form-control" name="password" placeholder="Password" type="password"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-secondary" id="submit" name="submit" type="submit">Log In</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <meta charset="utf-8">
+        <!-- Scales the page to fit the device viewport -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1">
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <!-- The Nav bar -->
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Benjie's books</a>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>-->
+            <!-- <div class="collapse navbar-collapse" id="navbarText"> -->
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">New book search</a></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                    </ul>
+
+                {% else %}
+                <ul class="navbar-nav ml-auto mt-2">
+                    <!-- A link to the registartion page -->
+                    <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                    <!-- A link to the log in page -->
+                    <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                </ul>
+                {% endif %}
+                </div>
+        </nav>
+        <!-- The main section. Updated using Jinja -->
+        <main>
+                {% block main %}
+
+                {% endblock %}
+        </main>
+        <!-- The Footer -->
+        <div class="footer footer--dark">
+      		<div class="container">
+      			<div class="footer__inner">
+      				<a href="index.html" class="footer__textLogo">Benjie's books</a>
+      				<div class="footer__data">
+      					<div class="footer__data__item">
+      						<div class="footer__row">
+      							Created and coded by <a href="https://twitter.com/EBgameZzz" target="_blank" class="footer__link">Ezilybored Ben</a>
+      						</div>
+                  <div class="footer__row">
+        						Ezilybored Ben <a href="https://github.com/anges244/ezilybored" target="_blank" class="footer__link">GitHub</a>
+        					</div>
+      					</div>
+      					<div class="footer__data__item">
+      						<div class="footer__row">Image resources from <a href="https://undraw.co" target="_blank" class="footer__link">unDraw</a>
+      						</div>
+      						<div class="footer__row">Some CSS stylings adapted from <a href="https://github.com/anges244/evie" target="_blank" class="footer__link">Evie</a>
+      						</div>
+                  <div class="footer__row">
+        						<a href="./additional.html" class="footer__link">MIT license</a>
+        					</div>
+      					</div>
+      					<div class="footer__data__item">
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+    </body>
+</html>
