@@ -33,7 +33,7 @@ main {
 .hero {
   position: relative;
   width: 100%;
-  height: 75vh;
+  height: auto;
   background-image: url('/static/images/undraw_book_lover_mkck.svg');
   background-clip: content-box;
   box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
@@ -124,6 +124,13 @@ main {
 
 #scrollToNext {
   transition: 0.7s; }
+
+/*--- MODIFICATIONS ---*/
+.hero--full .hero__content {
+  min-height: 100vh; }
+
+.hero--full + .hero__sub {
+  display: none; }
 
 /*--- Footer---*/
 .footer {
@@ -262,13 +269,6 @@ main {
   width: 80%;
 }
 
-
-/*--- MODIFICATIONS ---*/
-.hero--full .hero__content {
-  min-height: 100vh; }
-
-.hero--full + .hero__sub {
-  display: none; }
 
 @media only screen and (max-width: 900px) {
         .hidecol{
