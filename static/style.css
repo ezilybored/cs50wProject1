@@ -31,10 +31,9 @@ main {
 /*--- HERO BOX ---*/
 
 .hero {
-  display: inline-block;
   position: relative;
-  width: 100%;
-  height: 70vh;
+  /* width: 100%; */
+  /* height: 70vh; */
   background-image: url('/static/images/undraw_book_lover_mkck.svg');
   background-clip: content-box;
   box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
@@ -75,8 +74,9 @@ main {
   -js-display: flex;
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: center;
-  height; 100%;
+  min-height: 70vh;
   padding: calc( 92px) 0;
   overflow: auto; }
   .hero__content__inner {
@@ -135,7 +135,6 @@ main {
 
 /*--- Footer---*/
 .footer {
-  display: block;
   background-color: #ffffff;
   padding: 36pt 0; }
 
