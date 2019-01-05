@@ -12,7 +12,7 @@ import requests
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://zknipddgcabidt:bf8fd27a6ffbb8766fb69776c0b72fbff3b7ebe42f015763640fc78e6ae986a4@ec2-54-247-74-131.eu-west-1.compute.amazonaws.com:5432/d82fdubfunhhd3'
-db = SQLAlchemy(app)
+db = SQLAlchemy(app, autorollback=True)
 
 # Check for environment variable
 if not os.getenv("DATABASE_URL"):
