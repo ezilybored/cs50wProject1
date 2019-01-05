@@ -55,7 +55,7 @@
           {% for book in books %}
           <form action="/bookinfo" method="post" id="bookinfopage">
           <tr class="row">
-              <td class="col">{{ book.isbn }}</td>
+              <td class="col hidecol">{{ book.isbn }}</td>
               <td class="col">{{ book.title }}</td>
               <td class="col">{{ book.author }}</td>
               <td class="col hidecol">{{ book.year }}</td>
