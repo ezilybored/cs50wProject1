@@ -33,7 +33,7 @@ main {
 .hero {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 90%;
   background-image: url('/static/images/undraw_book_lover_mkck.svg');
   background-clip: content-box;
   box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
