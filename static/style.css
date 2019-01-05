@@ -125,7 +125,7 @@ main {
 #scrollToNext {
   transition: 0.7s; }
 
-/*--- FOOTER STYLING ---*/
+/*--- Footer---*/
 .footer {
   background-color: #ffffff;
   padding: 36pt 0; }
@@ -188,6 +188,7 @@ main {
 .footer__row {
   margin-bottom: 8pt; }
 
+/*--- Modifiers---*/
 .footer--dark {
   background-color: #333C44; }
   .footer--dark .footer__textLogo {
@@ -201,6 +202,7 @@ main {
       .footer--dark .footer__link:hover {
         color: #fff;
         border-color: #fff; } }
+
 
 /*--- Expanded sections ---*/
 .expanded {
