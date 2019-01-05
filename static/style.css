@@ -33,7 +33,7 @@ main {
 .hero {
   position: relative;
   width: 100%;
-  height: 90%;
+  height: 70vh;
   background-image: url('/static/images/undraw_book_lover_mkck.svg');
   background-clip: content-box;
   box-shadow: 0 4px 11px rgba(124, 146, 169, 0.5);
@@ -75,7 +75,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc( 100vh - 90px);
+  height; 100%;
   padding: calc( 92px) 0;
   overflow: auto; }
   .hero__content__inner {
