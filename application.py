@@ -7,6 +7,7 @@ from sqlalchemy import create_engine
 from werkzeug.exceptions import default_exceptions
 from werkzeug.security import check_password_hash, generate_password_hash
 from sqlalchemy.orm import scoped_session, sessionmaker
+from flask_sqlalchemy import SQLAlchemy
 import requests
 
 app = Flask(__name__)
